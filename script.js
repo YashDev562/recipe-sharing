@@ -1,4 +1,4 @@
-const addBtn = document.getElementById("add-button");
+const addBtn = document.getElementById("add");
 const model = document.getElementById("model-box");
 const submitBtn = document.getElementById("addNewRecipe");
 const cancelBtn = document.getElementById("closeModel");
@@ -37,8 +37,10 @@ submitBtn.addEventListener('click', () => {
     content.classList.add('recipe-content');
     const name = document.createElement('div');
     name.textContent = newRecipeName;
+    name.classList.add('recipe-name');
     const desc = document.createElement('div');
     desc.textContent = newRecipeDesc;
+    desc.classList.add('recipe-desc');
 
     content.appendChild(name);
     content.appendChild(desc);

@@ -59,9 +59,14 @@ body {
   /* Change the cursor to indicate it's clickable */
   cursor: pointer;
 }
+.image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
 .image {
     width: 100%;
-    height: 50%;
+    height: 45%;
 }
 .recipe-name {
     font-size: 24px;
