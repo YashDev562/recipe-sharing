@@ -53,3 +53,62 @@ submitBtn.addEventListener('click', () => {
     descInput.value = "";
 })
 
+
+const recipeData = {
+    "momos" : {
+        fullRecipe: "Knead plain flour with water to make a soft dough. Finely chop vegetables and mix with salt, pepper, and garlic. Roll the dough into small circles, add filling, and shape momos. Steam them for about 10–12 minutes and serve hot with spicy chutney." 
+    },
+    "biryani" : {
+        fullRecipe: "Marinate chicken with curd and spices and keep aside. Parboil basmati rice with salt and whole spices. Fry onions, add chicken and cook until tender. Layer rice and chicken together and cook on dum for 15 minutes."
+    },
+    "pizza" : {
+        fullRecipe: "Prepare pizza dough and roll it into a base. Spread pizza sauce evenly and add vegetables or chicken. Sprinkle cheese on top and bake in an oven or pan until the base is cooked and cheese melts."
+    },
+    "paneerbuttermasala" : {
+        fullRecipe: "Lightly fry paneer cubes and keep aside. Blend tomatoes and cashews into a smooth paste and cook it with spices and butter. Add cream, paneer, and simmer for a few minutes until the gravy thickens."
+    },
+    "friedrice" : {
+        fullRecipe: "Cook rice and let it cool. Stir-fry chicken in oil, add vegetables and sauces, then add the rice. Toss everything on high flame until well mixed and hot."
+    },
+    "pasta" : {
+        fullRecipe: "Boil pasta until soft and drain. Heat oil, sauté garlic, add tomato sauce and spices, then mix in the pasta. Cook for a minute and serve with cheese."
+    },
+    "burger" : {
+        fullRecipe: "Prepare or fry a patty and toast burger buns. Spread sauce on buns, add patty, vegetables, and cheese. Assemble and serve hot."
+    },
+    "springrolls" : { 
+        fullRecipe: "Prepare a vegetable or chicken filling and let it cool. Fill wrappers with the mixture, seal the edges, and deep fry until golden and crispy. Serve hot with sauce."
+    }
+}
+const detailView = document.getElementById('detail-view');
+const detailTitle = document.getElementById('detail-title');
+const detailRecipe = document.getElementById('detail-recipe');
+const mainContainer = document.querySelector('.main');
+
+mainContainer.addEventListener('click', (e) => {
+    // 1. Identify if a recipe box was clicked
+    let clickedBox = e.target.closest('.recipe-box'); 
+    
+    if (clickedBox) {
+        const recipeName = clickedBox.querySelector('.recipe-name').textContent;
+        
+        const recipeId = clickedBox.dataset.id;
+        const data = recipeData[recipeId];
+        
+        const fullRecipeText = data.fullRecipe || "Full recipe details are currently unavailable for this item.";
+        
+        // 3. Inject content
+        detailTitle.textContent = recipeName;
+        detailRecipe.textContent = fullRecipeText;
+        
+        // 4. Show the view
+        detailView.style.display = 'flex';
+    }
+});
+
+detailView.addEventListener('click', (e) => {
+    // Check if the element clicked (e.target) is the outer container itself.
+    if (e.target === detailView) {
+        detailView.style.display = 'none';
+    }
+});
