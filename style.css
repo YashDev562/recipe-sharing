@@ -59,6 +59,17 @@ body {
   /* Change the cursor to indicate it's clickable */
   cursor: pointer;
 }
+.image {
+    width: 100%;
+    height: 50%;
+}
+.recipe-name {
+    font-size: 24px;
+    font-weight: 700;
+}
+.recipe-desc {
+    font-size: 15px;
+}
 
 /*main*/
 .main {
@@ -68,4 +79,48 @@ body {
     padding:80px 40px 80px 40px;
     gap: 30px;
     width: 100%;
+}
+
+/*add-button*/
+.add-button {
+    position: fixed; /*this makes everything ignore it so flexbox of body doesnt apply to it*/
+    bottom: 20px;
+    right: 20px;
+    background-color: #3882f6; 
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /*makes it circular*/
+    font-size: 36px;
+    text-align: center;
+    line-height: 60px; /* Vertically centers the "+" text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Gives it a lift */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/*New Recipe Model*/
+#model-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 2000;
+    display: none;
+}
+.content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+}
+.content input, .content textarea {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
 }

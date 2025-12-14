@@ -8,14 +8,20 @@
     <body>    
         <script src="script.js"></script>
         <div class="head">
-            <div class="logo"><img src="img/image.png" alt="logo" class="chef"></div>
+            <div class="logo">
+                <img src="img/image.png" alt="logo" class="chef">
+                <!--<video id='vid' src="rickroll.mp4" controls preload="auto"></video> -->
+            </div>
             <div class="heading">Recipes Sharing Platform</div>
             <div class="spacer"></div> </div>
         </div>
         <div class="main">
             <div class="recipe-box">
-                <img src="" alt="momos">
-                <div class="recipe-name"></div>
+                <div class="image"><img src="" alt="momos"></div>
+                <div class="recipe-content">
+                    <div class="recipe-name">Momos</div>
+                    <div class="recipe-desc">steamed</div>
+                </div>
             </div>
             <div class="recipe-box"></div>
             <div class="recipe-box"></div>
@@ -26,6 +32,16 @@
             <div class="recipe-box"></div>
             <div class="recipe-box"></div>
             <div class="recipe-box"></div>
+        </div>
+        <div class="add-button" id="add">+</div>
+        <div id="model-box">
+            <div class="content">
+                <h2>Add new Recipe</h2>
+                <input type="text" id="nameInput" placeholder="Recipe Name">
+                <textarea id="descInput" placeholder="Description"></textarea>
+                <button id="addNewRecipe">Add to list</button>
+                <button id="closeModel">Cancel</button>
+            </div>
         </div>
         <div class="footer">
 
