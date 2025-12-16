@@ -145,7 +145,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6); /* Use a solid background for the takeover */
     z-index: 3000; 
     overflow-y: auto; /* Allows scrolling if the recipe is long */
-    
+    inset: 0;
     /* Start hidden */
     display: none; 
     justify-content: center;
@@ -154,10 +154,25 @@ body {
 
 .detail-content {
     max-width: 800px;
+    width: 70%;
+    max-height: 80vh;
+    overflow-y: auto;
     margin: 0; /* Remove the margin: 50px auto; */
     padding: 20px;
     line-height: 1.6;
     background: #f7f7f7; /* Gives the content block a visible boundary */
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }   
+#detail-title {
+    margin-bottom: 15px;
+    font-size: 28px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#detail-recipe {
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}

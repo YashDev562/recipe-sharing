@@ -22,3 +22,20 @@ JS :
 Apache 
 Web Server which listens in on the port 80 , php only works with apache
 Browser -> (HTTP request) -> Apache -> PHP script -> (SQL) -> MySQL
+
+MySQL 
+So this code was typed on phpmyadmin run through xampp 
+CREATE TABLE recipes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    recipe_key VARCHAR(100) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    full_recipe TEXT NOT NULL
+);
+here auto increment means literally it increases the value from 1 to how many ever recipes we put 
+text allows for 65000 char while varchar allows for 255 only 
+NOT NULL means it doesnt allow null values so some text must be written in it 
+UNIQUE means two rows cant have the same value for recipe_key
+PRIMARY KEY cannot be null , is unique , only one per table
+
+When using VS Code with WSL, Git integration and extensions must be installed separately inside the WSL environment. Until this setup completes, Git status indicators may not appear even though the repository is valid.

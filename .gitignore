@@ -1,0 +1,3 @@
+# Ignore user uploaded images
+img/uploads/*
+!img/uploads/.gitkeep
