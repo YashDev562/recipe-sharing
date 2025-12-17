@@ -12,6 +12,7 @@ Now it is being driven due to this being my Web EL
 6. 1vh - means 1% of the browser window
 7. inset - makes the element pressed , it is used with box-shadow
 8. white-space: pre-wrap preserves line breaks and spacing from text content while allowing wrapping
+9. transform with scale changes the size of the star
  
 # HTML :
 1. data-id - these are custom ids which can be changed accordingly and also accessed by the js code 
@@ -22,6 +23,10 @@ Now it is being driven due to this being my Web EL
 2. .replace() 
 3. appendChild()
 4. .dataset.id
+5. `` or backticks are used for combining variables and static content 
+6. '${recipeKey}` - means putting the value of recipeKey in its place 
+- this allows js to build html cleanly 
+- ${} is JavaScript syntax used inside template literals to interpolate variables into strings before rendering them in the DOM. 
 
 # Apache 
 - Web Server which listens in on the port 80 , php only works with apache
@@ -40,6 +45,7 @@ Now it is being driven due to this being my Web EL
 6. so we use $ to declare variables in php and in the fetch function of getRecipes.php we have $conn ->query(%sql) so this means that $conn which is MySQLi Object represents a live connection to the mysql database, and query is the method to send the sql to the mysql
 - use the database connection object to run this sql query
 7. in a similar way as 6 we have addRecipe.php where we use the POST method to input any value from the client to the php and then we use the $conn->prepare to write the sql command using the php variables declared.
+8. rateRecipe.php works in a very simple way : it takes in user input and then accesses the information about that recipe and updates the average and count with the user input given currently 
 
 # MySQL 
 -So this code was typed on phpmyadmin run through xampp 
