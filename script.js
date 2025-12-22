@@ -112,6 +112,10 @@ submitBtn.addEventListener('click', () => {
     .catch(err => console.error(err));
 });
 
+document.getElementById("Sign-In").addEventListener('click',() => {
+  window.location.href = "sign-in.html"
+})
+
 
 /*Detailed view feature*/
 
