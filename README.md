@@ -2,6 +2,15 @@
 The reason it was created was due to odin project 
 Now it is being driven due to this being my Web EL
 
+# New Changes
+
+22-12-2025
+
+1. Added a sign-up/login button in the index.html file.
+2. Added HTML file for the login page and its respective CSS styling file.
+3. Added HTML file for the signup page and its respective CSS styling file.
+
+
 # Learning points 
 # CSS : 
 1. changing the display from none to flex/block - this allows for pop ups to work 
