@@ -12,22 +12,22 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.login-info {
+.login_info {
   font-size: 16px;
   display: flex;            /* flexbox layout */
   flex-direction: column;   /* stack items vertically */
   gap: 15px;                /* spacing between fields */
 }
 
-.login-info input[type="text"],
-.login-info input[type="password"] {
+.login_info input[type="text"],
+.login_info input[type="password"] {
   width: 100%;              /* full width inside box */
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.login-info input[type="submit"] {
+.login_info input[type="submit"] {
   background-color: #0077cc;
   color: white;
   padding: 10px;
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-.login-info input[type="submit"]:hover {
+.login_info input[type="submit"]:hover {
   background-color: #005fa3; /* hover effect */
 }
 
