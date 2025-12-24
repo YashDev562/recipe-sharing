@@ -9,7 +9,7 @@ document.getElementById("login_info").addEventListener("submit", async e => {
   }
 
   try {
-    const response = await fetch("verifyCredentials.php", {
+    const response = await fetch("/recipe-sharing/api/verifyCredentials.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user)
@@ -17,7 +17,8 @@ document.getElementById("login_info").addEventListener("submit", async e => {
 
     const data = await response.json();
 
-    if (data.isValidCredential) {
+    if (data.status === "success") {
+      console.log("success");
       window.location.href = "index.html";
     } else {
       alert("Invalid Login Credentials, please try again");
