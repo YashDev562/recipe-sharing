@@ -6,26 +6,35 @@ document.getElementById("signup_info").addEventListener("submit", async e => {
   const password = document.getElementById("password").value.trim();
 
   const new_user = {
-    email_id : email_id,
-    username : username,
-    passsword : password
+    email_id: email_id,
+    username: username,
+    password: password
   }
 
   try {
-    const response = await fetch("addCredentials.php",{
-      method : "POST",
-      header : {
-        "Content-Type" : "application/json",
-        "Accept" : "application/json"
+    const response = await fetch("/recipe-sharing/api/addCredentials.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
       },
-      body : JSON.stringify(new_user)
+      body: JSON.stringify(new_user)
     });
+    let JS_response;
+    try {
+       JS_response = await response.json();
+    } catch (jsonError) {
+      const raw = await response.text();
+      console.error("Invalid JSON:", raw);
+      alert("Server error:\n" + raw);
+      return;
+    }
 
-    const JS_response = await response.json()
-    
-    if(JS_response.isUserAdded) {
-      window.location.href = "index.html"
-    } 
+    if(JS_response.status === "success") {
+      window.location.href = "/recipe-sharing/index.html"
+    } else {
+      alert("Error")
+    }
   } catch(error) {
     console.error("Error:", error);
     alert("Something went wrong, please try again");
